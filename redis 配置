@@ -1,0 +1,33 @@
+以port:6379为例：
+1. 创建文件
+sudo mkdir /etc/init.d/redis_6379
+sudo mkdir /etc/redis/redis_6379.conf
+sudo mkdir /var/redis/6379
+sudo touch /var/log/redis_6379.log
+
+2. 拷贝redis目录下redis.conf到redis_6379.conf
+daemonize yes                         (default no)
+port 6379                             (default 6379)
+logfile "/var/log/redis_6379.log"     (default "")
+dir /var/redis/6379                   (default ./)
+
+3. 拷贝redis/utils/redis_init_script到/etc/init.d/redis_6379
+
+REDISPORT=6379          (default 6379)
+EXEC=/usr/local/bin/redis-server
+CLIEXEC=/usr/local/bin/redis-cli
+
+PIDFILE=/var/run/redis_${REDISPORT}.pid
+CONF="/etc/redis/${REDISPORT}.conf"
+
+4. 运行redis-server & redis-cli
+sudo update-rc.d redis_6379 defaults
+sudo /etc/init.d/redis_6379 start       (start redis-server)
+sudo /etc/init.d/redis_6379 stop        (stop redis-server)
+redis-cli -p 6379                       (Now operate the database)
+127.0.0.1:6381> save                    (save the data)
+127.0.0.1:6381> SHUTDOWN                (stop redis-server)
+
+5. 检查运行情况
+/var/log/redis_6379.log                 
+

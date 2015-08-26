@@ -1,0 +1,18 @@
+auth
+keys 
+del              redis del 通配符
+exists
+get
+type
+lpush
+lrange           lrange 0 -1  get all elements in the list; lrange 0 -2 get all elements except the last one.
+select           change the current database, default 0. redis.conf sets the database number is 16. 
+incr            递增1
+incrby          递增n
+decr            递减1
+decrby          递减n
+incrbyfloat     递增一个双精度浮点数    
+append          向尾部增加值
+strlen          获取字符串长度
+mset            设置多个键值
+mget            获得多个键值

@@ -5,8 +5,13 @@ exists
 get
 type
 lpush
-lrange           lrange 0 -1  get all elements in the list; lrange 0 -2 get all elements except the last one.
-select           change the current database, default 0. redis.conf sets the database number is 16. 
+rpush
+lpop            将列表左边元素移除并返回
+rpop            将列表右边元素移除并返回
+llen            获取列表中元素个数
+lrange          lrange 0 -1  get all elements in the list; lrange 0 -2 get all elements except the last one.
+lrem            删除列表中指定的值(LREM KEY COUNT VALUE: COUNT < 0, from right; COUNT > 0, from left; COUNT = 0, DELET ALL. COUNT is the number of removed value)
+select          change the current database, default 0. redis.conf sets the database number is 16. 
 incr            递增1
 incrby          递增n
 decr            递减1
@@ -16,3 +21,15 @@ append          向尾部增加值
 strlen          获取字符串长度
 mset            设置多个键值
 mget            获得多个键值
+hset            散列设置值
+hget            散列获取值
+hmset           散列设置多个值
+hmset           散列获取多个值
+hgetall         获取散列所有值
+hexists         判断散列字段是否存在 存在返回1，否则返回0
+hsetnx          散列字段不存在设置，存在不做字段更新
+hincrby         散列字段增加制定整数，自动建立键值
+hdel            删除一个或多个字段
+hkeys           返回一个散列中的所有字段名
+hvals           返回一个散列所有字段对应的值
+hlen            返回散列中字段的数量

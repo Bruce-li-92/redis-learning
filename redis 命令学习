@@ -46,6 +46,13 @@ sdiff           差集
 sinter          交集
 sunion          并集
 scard 
-sdiffstore
-sinterstore
-sunionstore
+sdiffstore      差集结果保存
+sinterstore     交集结果保存
+sunionstore     并集结果保存
+srandmember     随即获取集合中的元素
+zadd            增加元素
+zscore          获得元素的分数
+zrange          获得分数在某个范围的元素列表（从小到大）
+zrevrange       获得分数在某个范围的元素列表（从大到小）
+zrangebyscore   获得指定分数范围的元素
+zincrby         增加某个元素的分数

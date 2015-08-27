@@ -45,7 +45,7 @@ sismember       判断元素是否在集合中
 sdiff           差集
 sinter          交集
 sunion          并集
-scard 
+scard           获得集合中元素的数量
 sdiffstore      差集结果保存
 sinterstore     交集结果保存
 sunionstore     并集结果保存
@@ -55,4 +55,13 @@ zscore          获得元素的分数
 zrange          获得分数在某个范围的元素列表（从小到大）
 zrevrange       获得分数在某个范围的元素列表（从大到小）
 zrangebyscore   获得指定分数范围的元素
-zincrby         增加某个元素的分数
+zincrby         增加某个元素的分数(zincrby key increment member)
+zcard           获取集合中元素的数量
+zcount          获取指定分数范围内的元素个数
+zrem            删除一个或多个元素
+zremrangebyrank 按照排名范围删除元素
+zremrangebyscore按照分数范围删除元素
+zrank           获得元素的排名（从小到大）
+zrevrank        获得元素的排名（从大到小）
+zinterstore     计算有序集合的交集
+zunionstore     计算有序集合的并集

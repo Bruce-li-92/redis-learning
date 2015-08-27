@@ -11,6 +11,11 @@ rpop            将列表右边元素移除并返回
 llen            获取列表中元素个数
 lrange          lrange 0 -1  get all elements in the list; lrange 0 -2 get all elements except the last one.
 lrem            删除列表中指定的值(LREM KEY COUNT VALUE: COUNT < 0, from right; COUNT > 0, from left; COUNT = 0, DELET ALL. COUNT is the number of removed value)
+lindex          获得制定索引的元素值
+lset            设置制定索引的元素值
+ltrim           只保留列表指定片段
+linsert         向列表中插入元素
+rpoplpush       将元素从一个列表转移到另一个列表
 select          change the current database, default 0. redis.conf sets the database number is 16. 
 incr            递增1
 incrby          递增n
@@ -33,3 +38,14 @@ hdel            删除一个或多个字段
 hkeys           返回一个散列中的所有字段名
 hvals           返回一个散列所有字段对应的值
 hlen            返回散列中字段的数量
+sadd            增加元素
+srem            减少元素
+smembers        获得集合所有元素
+sismember       判断元素是否在集合中
+sdiff           差集
+sinter          交集
+sunion          并集
+scard 
+sdiffstore
+sinterstore
+sunionstore
